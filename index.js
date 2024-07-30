@@ -4,7 +4,7 @@ const cors = require('cors');
 const userRouters = require('./routers/userRouters');
 const defaultSweetRouter = require('./routers/defaultSweetRouter');
 const mainSweetRouter = require('./routers/mainSweetRouter');
-require('dotenv').config(); // Add this line to load environment variables
+require('dotenv').config();
 
 const app = express();
 
@@ -24,6 +24,11 @@ connectDB();
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something broke!');
+});
+
+// Basic route for health check
+app.get('/', (req, res) => {
+  res.send('Server is running');
 });
 
 // Server Running Port Number
