@@ -1,0 +1,6 @@
+
+*inside .gitignore*
+
+/node_modules
+/vars
+.env
