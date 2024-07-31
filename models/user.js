@@ -9,12 +9,13 @@ const userSchema = new mongoose.Schema({
         unique:true,
         trim:true,
     },
-    password:{
+    password: {
         type: String,
         required: true,
-        minlenght: 8,
-        maxlenght: 128,
-    },
+        minLength: 8, // Correct typo
+        maxLength: 128, // Correct typo
+      },
+      
     email:{
         type: String,
         required: true,

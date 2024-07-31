@@ -1,16 +1,9 @@
 const express = require('express');
-const {register, login, authenticateToken} = require('../controllers/userControllers');
-
 const router = express.Router();
-
-//register Route
+const { register, login } = require('../controllers/userControllers');
+const { authenticateToken } = require('../middleware/authMiddleware'); // Import authentication middleware
 
 router.post('/register', register);
 router.post('/login', login);
-
-router.get('/api/users/verify', authenticateToken, (req, res) => {
-  // Return the user data
-  res.json({ user: req.user });
-});
 
 module.exports = router;
