@@ -9,12 +9,7 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
-app.use(cors({
-  origin: 'https://famous-dolphin-56997d.netlify.app/', // or your frontend's origin
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allow the Authorization header
-  credentials: true 
-}));
+app.use(cors());
 app.use(express.json());
 const { authenticateToken } = require('./middleware/authMiddleware');
 
